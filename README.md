@@ -63,12 +63,12 @@ php artisan vendor:publish --tag="filament-maillog-translations"
 
 ## Using the Resource
 
-Add this plugin to a panel on `plugins()` method. 
+Add this plugin to a panel on `plugins()` method.
 E.g. in `app/Providers/Filament/AdminPanelProvider.php`:
 
 ```php
 use Tapp\FilamentMailLog\FilamentMailLogPlugin;
- 
+
 public function panel(Panel $panel): Panel
 {
     return $panel
@@ -78,6 +78,22 @@ public function panel(Panel $panel): Panel
             //...
         ]);
 }
+```
+
+Additionally, you may use the `accessibleIf` method to conditionally deny access to mail logs depending on the current logged-in user.<br>
+You may pass a `bool` or a `callable` to the method with one argument that represents the current user.
+
+```php
+use App\Models\User;
+use Tapp\FilamentMailLog\FilamentMailLogPlugin;
+
+//...
+
+->plugins([
+    FilamentMailLogPlugin::make()
+        ->accessibleIf(fn (User $user) => $user->isSuperAdmin()),
+    //...
+]);
 ```
 
 ## Testing
