@@ -13,10 +13,17 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Tapp\FilamentMailLog\Models\MailLog;
 use Tapp\FilamentMailLog\Resources\MailLogResource\Pages;
+use Tapp\FilamentMailLog\FilamentMailLogPlugin;
 
 class MailLogResource extends Resource
 {
     protected static ?string $model = MailLog::class;
+
+    public static function canAccess(): bool
+    {
+        $plugin = FilamentMailLogPlugin::get();
+        return $plugin->isAccessible();
+    }
 
     public static function shouldRegisterNavigation(): bool
     {
