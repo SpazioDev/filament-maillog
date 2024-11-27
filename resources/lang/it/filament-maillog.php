@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'navigation.group' => 'Log',
+    'navigation.maillog.label' => 'Log Email',
+    'navigation.maillog.plural-label' => 'Log delle Email',
+    'table.heading' => 'Log delle Email',
+    'column.status' => 'Stato',
+    'column.subject' => 'Oggetto',
+    'column.to' => 'A',
+    'column.from' => 'Da',
+    'column.cc' => 'CC',
+    'column.bcc' => 'BCC',
+    'column.message_id' => 'ID Messaggio',
+    'column.delivered' => 'Consegnato',
+    'column.opened' => 'Aperto',
+    'column.bounced' => 'Rimbalzato',
+    'column.complaint' => 'Reclamo',
+    'column.body' => 'Corpo',
+    'column.headers' => 'Intestazioni',
+    'column.attachments' => 'Allegati',
+    'column.data' => 'Dati',
+    'column.created_at' => 'Creato il',
+    'column.updated_at' => 'Aggiornato il',
+];
